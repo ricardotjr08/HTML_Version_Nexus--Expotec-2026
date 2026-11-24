@@ -1,0 +1,95 @@
+/* Convidados */
+.convidado-item {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 0.5rem 1.5rem;
+width: 100%;
+background-color: var(--cor-card);
+border: 1px solid var(--cor-borda);
+border-radius: 0.5rem;
+padding: 1rem 1.25rem;
+color: var(--cor-texto);
+text-align: left;
+cursor: pointer;
+}
+
+.convidado-item:hover {
+border-color: var(--cor-azul);
+}
+
+.convidado-nome {
+flex: 1 1 200px;
+font-weight: 600;
+}
+
+.convidado-email {
+flex: 1 1 240px;
+font-size: 0.875rem;
+color: var(--cor-texto-secundario);
+word-break: break-all;
+}
+
+.convidado-cargo {
+font-size: 0.75rem;
+padding: 0.25rem 0.75rem;
+border-radius: 999px;
+border: 1px solid var(--cor-azul);
+color: var(--cor-azul);
+white-space: nowrap;
+}
+
+.convidado-cargo.sem-cargo {
+border-color: var(--cor-texto-secundario);
+color: var(--cor-texto-secundario);
+}
+
+
+/* Cargos */
+.cargo-item {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 1rem;
+padding: 0.5rem 0.25rem;
+border-bottom: 1px solid var(--cor-borda);
+}
+
+.cargo-item:last-child {
+border-bottom: none;
+}
+
+
+/* Modal */
+.modal-dark .modal-content {
+background-color: var(--cor-card);
+color: var(--cor-texto);
+border: 1px solid var(--cor-borda);
+}
+
+.modal-dark .modal-header,
+.modal-dark .modal-footer {
+border-color: var(--cor-borda);
+}
+
+.modal-dark .form-label {
+color: var(--cor-texto-secundario);
+font-size: 0.8rem;
+margin-bottom: 0.25rem;
+}
+
+.modal-dark .form-control,
+.modal-dark .form-select {
+background-color: var(--cor-header);
+border: 1px solid var(--cor-borda);
+color: var(--cor-texto);
+font-size: 0.875rem;
+}
+
+.modal-dark .form-control:focus,
+.modal-dark .form-select:focus {
+background-color: var(--cor-header);
+color: #fff;
+border-color: var(--cor-azul);
+box-shadow: none;
+}

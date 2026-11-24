@@ -1,0 +1,150 @@
+/* Depoimentos */
+.feedback-card {
+display: flex;
+flex-direction: column;
+gap: 16px;
+height: 100%;
+}
+
+.feedback-stars {
+color: #fbbf24;
+font-size: 0.9rem;
+}
+
+.feedback-texto {
+flex: 1;
+margin: 0;
+line-height: 1.6;
+}
+
+.feedback-autor {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.feedback-avatar {
+display: grid;
+place-items: center;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: rgba(56, 189, 248, 0.15);
+color: var(--cor-azul);
+font-size: 0.85rem;
+font-weight: 600;
+}
+
+
+/* Depoimentos: foto redonda no topo, estrelas, mensagem e nome */
+.feedback-card {
+align-items: center;
+text-align: center;
+}
+
+.feedback-foto {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+object-fit: cover;
+border: 2px solid var(--cor-azul);
+}
+
+.feedback-iniciais {
+display: grid;
+place-items: center;
+background-color: rgba(56, 189, 248, 0.15);
+color: var(--cor-azul);
+font-size: 1.4rem;
+font-weight: 600;
+}
+
+
+/* Depoimentos em carrossel (rola com o mouse nas laterais) */
+.feedback-carousel {
+position: relative;
+}
+
+.feedback-trilho {
+display: flex;
+gap: 24px;
+padding: 4px 0;
+overflow-x: auto;
+scrollbar-width: none;
+}
+
+.feedback-trilho::-webkit-scrollbar {
+display: none;
+}
+
+.feedback-trilho:focus-visible {
+outline: 2px solid var(--cor-azul);
+outline-offset: 4px;
+}
+
+.feedback-carousel .feedback-card {
+flex: 0 0 340px;
+width: 340px;
+height: auto;
+}
+
+.feedback-seta {
+position: absolute;
+top: 0;
+bottom: 0;
+z-index: 2;
+width: 90px;
+border: none;
+color: var(--cor-texto);
+font-size: 1.4rem;
+cursor: pointer;
+transition: opacity 0.2s;
+}
+
+.feedback-seta-esq {
+left: 0;
+background: linear-gradient(to right, var(--cor-fundo) 15%, transparent);
+text-align: left;
+padding-left: 12px;
+}
+
+.feedback-seta-dir {
+right: 0;
+background: linear-gradient(to left, var(--cor-fundo) 15%, transparent);
+text-align: right;
+padding-right: 12px;
+}
+
+.feedback-seta:hover,
+.feedback-seta:focus-visible {
+color: var(--cor-azul);
+}
+
+.feedback-seta.oculta {
+opacity: 0;
+pointer-events: none;
+}
+
+@media (max-width: 575px) {
+.feedback-carousel .feedback-card {
+flex-basis: 280px;
+width: 280px;
+}
+
+.feedback-seta {
+width: 48px;
+}
+}
+
+.feedback-seta {
+display: flex;
+align-items: center;
+}
+
+.feedback-seta-esq {
+justify-content: flex-start;
+}
+
+.feedback-seta-dir {
+justify-content: flex-end;
+}

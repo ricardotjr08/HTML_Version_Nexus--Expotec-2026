@@ -1,0 +1,207 @@
+.auth-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+/* Lado esquerdo: imagem + frase */
+.auth-visual {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 48px;
+    background: url("../img/estoque.png") center / cover no-repeat, var(--cor-header);
+}
+
+.auth-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(9, 13, 22, 0.95) 10%, rgba(9, 13, 22, 0.35) 70%);
+}
+
+.auth-visual p {
+    position: relative;
+    margin: 0;
+    max-width: 420px;
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+/* Lado direito: formulário */
+.auth-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 24px;
+    background-color: var(--cor-fundo);
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 380px;
+}
+
+.auth-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 32px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--cor-texto);
+    text-decoration: none;
+}
+
+.auth-logo .logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+}
+
+.auth-box h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.auth-sub {
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+}
+
+/* Campos */
+.auth-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 11px 14px;
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+}
+
+.campo input::placeholder {
+    color: var(--cor-texto-secundario);
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: var(--cor-azul);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+/* Campo de senha com botão mostrar/ocultar */
+.campo-senha {
+    position: relative;
+}
+
+.campo-senha input {
+    padding-right: 84px;
+}
+
+.btn-mostrar {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    padding: 4px 10px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: var(--cor-texto-secundario);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.btn-mostrar:hover,
+.btn-mostrar:focus-visible {
+    color: var(--cor-azul);
+}
+
+/* Botão principal */
+.btn-auth {
+    width: 100%;
+    padding: 12px;
+    background-color: #0284c7;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-auth:hover {
+    background-color: #0369a1;
+}
+
+.btn-auth:focus-visible {
+    outline: 2px solid var(--cor-azul);
+    outline-offset: 2px;
+}
+
+/* Mensagens */
+.aviso {
+    display: none;
+    margin-bottom: 18px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+}
+
+.aviso.erro {
+    display: block;
+    background-color: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #fca5a5;
+}
+
+.aviso.sucesso {
+    display: block;
+    background-color: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    color: #86efac;
+}
+
+/* Link para a outra página */
+.auth-troca {
+    margin-top: 28px;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--cor-texto-secundario);
+}
+
+.auth-troca a {
+    color: var(--cor-azul);
+    text-decoration: none;
+}
+
+.auth-troca a:hover {
+    text-decoration: underline;
+}
+
+/* Celular: some a imagem */
+@media (max-width: 767px) {
+    .auth-page {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-visual {
+        display: none;
+    }
+}

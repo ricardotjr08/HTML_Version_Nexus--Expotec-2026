@@ -1,0 +1,425 @@
+/* Cores principais */
+:root {
+--cor-fundo: #090d16;
+--cor-header: #0f172a;
+--cor-card: #1e293b;
+--cor-texto: #f8fafc;
+--cor-texto-secundario: #94a3b8;
+--cor-azul: #38bdf8;
+--cor-borda: rgba(255, 255, 255, 0.08);
+}
+
+
+/* Página */
+body {
+font-family: Arial, sans-serif;
+background-color: var(--cor-fundo);
+color: var(--cor-texto);
+min-height: 100vh;
+}
+
+
+/* Cabeçalho */
+header {
+background-color: rgba(15, 23, 42, 0.9);
+border-bottom: 1px solid var(--cor-borda);
+backdrop-filter: blur(10px);
+}
+
+
+/* Logo */
+.logo-icon {
+color: var(--cor-azul);
+}
+
+
+/* Menu */
+.nav-menu {
+background-color: rgba(255, 255, 255, 0.03);
+padding: 4px;
+border: 1px solid var(--cor-borda);
+border-radius: 10px;
+}
+
+.nav-btn {
+border: none;
+background: transparent;
+color: var(--cor-texto-secundario);
+padding: 8px 16px;
+border-radius: 8px;
+font-size: 14px;
+cursor: pointer;
+}
+
+.nav-btn:hover {
+color: var(--cor-azul);
+}
+
+.nav-btn.active {
+background-color: var(--cor-card);
+color: var(--cor-azul);
+}
+
+
+/* Botão de Login */
+.login-btn {
+color: var(--cor-texto-secundario);
+}
+
+.login-btn:hover {
+color: var(--cor-azul);
+}
+
+
+/* Botão principal */
+.btn-primary {
+background-color: #0284c7;
+border-color: #0284c7;
+}
+
+.btn-primary:hover {
+background-color: #0369a1;
+border-color: #0369a1;
+}
+
+
+/* Rodapé */
+footer {
+background-color: var(--cor-header);
+border-top: 1px solid var(--cor-borda);
+color: var(--cor-texto-secundario);
+}
+
+.footer-text {
+margin-left: 5px;
+}
+
+footer a {
+color: var(--cor-texto-secundario);
+text-decoration: none;
+}
+
+footer a:hover {
+color: var(--cor-azul);
+}
+
+
+
+
+
+
+/* Primeira seção */
+
+.min-vh-75 {
+min-height: 75vh;
+}
+
+.hero-image {
+height: 400px;
+position: relative;
+overflow: hidden;
+
+
+mask-image: linear-gradient(to right, black 60%, transparent 100%); /* Faz a imagem desaparecer para a direita */
+-webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%); /* Faz a imagem desaparecer para a direita */
+}
+
+.hero-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+
+/* Links do menu (agora são <a>, não <button>) */
+a.nav-btn {
+display: inline-block;
+text-decoration: none;
+}
+
+.nav-btn:focus-visible {
+outline: 2px solid var(--cor-azul);
+outline-offset: 2px;
+}
+
+
+/* Cards (termos, privacidade, suporte, depoimentos) */
+.dashboard-card {
+background-color: var(--cor-card);
+border: 1px solid var(--cor-borda);
+border-radius: 12px;
+}
+
+/* Estilos para os cards do workspace */
+.workspace-shell {
+display: flex;
+flex-direction: column;
+gap: 1.25rem;
+}
+
+.workspace-hero {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 1.5rem;
+background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.9));
+}
+
+.workspace-label {
+display: inline-block;
+font-size: 0.72rem;
+font-weight: 700;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--cor-azul);
+margin-bottom: 0.6rem;
+}
+
+.workspace-actions {
+display: flex;
+gap: 0.75rem;
+flex-wrap: wrap;
+}
+
+.workspace-stats {
+display: grid;
+grid-template-columns: repeat(3, minmax(110px, 1fr));
+gap: 0.75rem;
+min-width: 300px;
+}
+
+.workspace-stat {
+background: rgba(255, 255, 255, 0.03);
+border: 1px solid var(--cor-borda);
+border-radius: 10px;
+padding: 0.9rem 1rem;
+}
+
+.workspace-stat__label {
+display: block;
+font-size: 0.72rem;
+color: var(--cor-texto-secundario);
+margin-bottom: 0.35rem;
+}
+
+.workspace-stat strong {
+font-size: 1rem;
+color: var(--cor-texto);
+}
+
+.workspace-layout {
+display: grid;
+grid-template-columns: 320px minmax(0, 1fr);
+gap: 1.25rem;
+}
+
+.workspace-sidebar,
+.workspace-content {
+display: flex;
+flex-direction: column;
+gap: 1.25rem;
+}
+
+.workspace-panel-header {
+margin-bottom: 1rem;
+}
+
+.workspace-panel-header h3 {
+margin: 0;
+font-size: 0.9rem;
+font-weight: 700;
+color: var(--cor-texto);
+text-transform: uppercase;
+letter-spacing: 0.04em;
+}
+
+.workspace-user-card {
+display: flex;
+align-items: center;
+gap: 0.9rem;
+margin-bottom: 1rem;
+}
+
+.workspace-avatar {
+width: 46px;
+height: 46px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+background: linear-gradient(135deg, var(--cor-azul), #8b5cf6);
+color: #fff;
+font-weight: 700;
+font-size: 1.05rem;
+}
+
+.workspace-user-meta {
+display: grid;
+gap: 0.8rem;
+margin-bottom: 1rem;
+}
+
+.workspace-user-meta div {
+display: flex;
+justify-content: space-between;
+gap: 1rem;
+font-size: 0.82rem;
+color: var(--cor-texto-secundario);
+}
+
+.workspace-user-meta strong {
+color: var(--cor-texto);
+font-weight: 600;
+}
+
+.workspace-bio {
+font-size: 0.82rem;
+line-height: 1.6;
+color: var(--cor-texto-secundario);
+padding-top: 0.8rem;
+border-top: 1px solid var(--cor-borda);
+}
+
+.workspace-bio.muted {
+opacity: 0.8;
+}
+
+.workspace-links {
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+}
+
+.workspace-links a {
+color: var(--cor-texto);
+text-decoration: none;
+background: rgba(255, 255, 255, 0.02);
+border: 1px solid var(--cor-borda);
+border-radius: 10px;
+padding: 0.7rem 0.8rem;
+font-size: 0.86rem;
+}
+
+.workspace-links a:hover {
+color: var(--cor-azul);
+border-color: rgba(56, 189, 248, 0.4);
+}
+
+.workspace-counter {
+color: var(--cor-texto-secundario);
+font-size: 0.8rem;
+}
+
+.workspace-company-list {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 1rem;
+}
+
+.workspace-company-link {
+display: block;
+text-decoration: none;
+color: inherit;
+transition: transform 0.2s ease;
+}
+
+.workspace-company-link:hover {
+text-decoration: none;
+color: inherit;
+transform: translateY(-2px);
+}
+
+.workspace-company-card {
+background-color: rgba(255, 255, 255, 0.02);
+border: 1px solid var(--cor-borda);
+border-radius: 12px;
+padding: 1rem;
+min-height: 220px;
+}
+
+.workspace-company-top {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 0.9rem;
+}
+
+.workspace-company-tag {
+display: inline-block;
+color: var(--cor-azul);
+font-size: 0.7rem;
+font-weight: 700;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+}
+
+.workspace-badge {
+display: inline-block;
+background: rgba(56, 189, 248, 0.08);
+color: #7dd3fc;
+border: 1px solid rgba(56, 189, 248, 0.25);
+border-radius: 999px;
+padding: 0.25rem 0.55rem;
+font-size: 0.7rem;
+font-weight: 600;
+text-transform: capitalize;
+}
+
+.workspace-company-description {
+color: var(--cor-texto-secundario);
+font-size: 0.87rem;
+line-height: 1.6;
+min-height: 80px;
+}
+
+.workspace-company-meta {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 0.75rem;
+padding-top: 0.75rem;
+border-top: 1px solid var(--cor-borda);
+}
+
+.workspace-company-meta div {
+display: flex;
+flex-direction: column;
+gap: 0.2rem;
+}
+
+.workspace-company-meta span {
+color: var(--cor-texto-secundario);
+font-size: 0.72rem;
+}
+
+.workspace-company-meta strong {
+color: var(--cor-texto);
+font-size: 0.8rem;
+font-weight: 600;
+}
+
+.workspace-empty {
+background: rgba(255, 255, 255, 0.02);
+border: 1px dashed var(--cor-borda);
+border-radius: 12px;
+padding: 1.25rem;
+color: var(--cor-texto-secundario);
+}
+
+@media (max-width: 991px) {
+.workspace-hero {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.workspace-layout {
+grid-template-columns: 1fr;
+}
+}
+
+@media (max-width: 576px) {
+.workspace-stats {
+grid-template-columns: 1fr;
+min-width: 100%;
+}
+}
+

@@ -1,0 +1,53 @@
+.card-custom {
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    height: 100%;
+}
+
+.filter-section {
+    background-color: var(--cor-header);
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+}
+
+.form-control-dark,
+.form-select-dark {
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    font-size: 0.875rem;
+}
+
+.form-control-dark:focus,
+.form-select-dark:focus {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    border-color: var(--cor-azul);
+    box-shadow: none;
+}
+
+.table-dark-custom {
+    color: var(--cor-texto);
+    font-size: 0.85rem;
+}
+
+table.table-dark-custom thead th {
+    background-color: var(--cor-header);
+    color: #fff !important;
+    border-bottom: 1px solid var(--cor-borda);
+    font-weight: 600;
+}
+
+table.table-dark-custom tbody td {
+    background-color: var(--cor-card);
+    color: #fff !important;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+table.table-dark-custom th *,
+table.table-dark-custom td * {
+    color: #fff !important;
+}

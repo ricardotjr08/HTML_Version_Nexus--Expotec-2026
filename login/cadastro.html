@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta | Nexus</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="../assets/css/principal.css" rel="stylesheet">
+    <link href="../assets/css/autenticacao.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="auth-page">
+
+    <div class="auth-visual">
+        <p>Controle seu estoque de forma simples.</p>
+    </div>
+
+    <main class="auth-side">
+        <div class="auth-box">
+            <a href="../index.html" class="auth-logo">
+                <div class="logo-icon me-2">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                <span class="fw-semibold fs-5">Nexus</span>
+            </a>
+
+            <h1>Crie sua conta</h1>
+            <p class="auth-sub">Preencha os dados abaixo para começar.</p>
+
+            <div id="aviso" class="aviso" role="alert"></div>
+
+            <form action="#" method="post" id="form-cadastro">
+                <div class="campo">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name" required>
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="exemplo@email.com" autocomplete="email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <div class="campo-senha">
+                        <input type="password" id="senha" name="senha" placeholder="Mínimo de 8 caracteres" minlength="8" autocomplete="new-password" required>
+                        <button type="button" class="btn-mostrar" data-alvo="senha">Mostrar</button>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="confirmar">Confirmar senha</label>
+                    <div class="campo-senha">
+                        <input type="password" id="confirmar" name="confirmar" placeholder="Repita a senha" autocomplete="new-password" required>
+                        <button type="button" class="btn-mostrar" data-alvo="confirmar">Mostrar</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-auth">Criar conta</button>
+            </form>
+
+            <p class="auth-troca">Já tem uma conta? <a href="login.html">Entrar</a></p>
+        </div>
+    </main>
+
+</div>
+
+<script src="../assets/js/database.js"></script>
+<script>
+    document.querySelectorAll('.btn-mostrar').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var campo = document.getElementById(btn.dataset.alvo);
+            var oculta = campo.type === 'password';
+            campo.type = oculta ? 'text' : 'password';
+            btn.textContent = oculta ? 'Ocultar' : 'Mostrar';
+        });
+    });
+
+    var aviso = document.getElementById('aviso');
+    function mostrarErro(texto) {
+        aviso.textContent = texto;
+        aviso.className = 'aviso erro';
+    }
+
+    document.getElementById('form-cadastro').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var nome = document.getElementById('nome').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var senha = document.getElementById('senha').value;
+        var confirmar = document.getElementById('confirmar').value;
+
+        if (!nome || !email || !senha || !confirmar) return mostrarErro('Preencha todos os campos.');
+        if (senha.length < 8) return mostrarErro('A senha precisa ter pelo menos 8 caracteres.');
+        if (senha !== confirmar) return mostrarErro('As senhas não são iguais.');
+
+        var resultado = NexusDB.registrar(nome, email, senha);
+        if (!resultado.ok) return mostrarErro('Já existe uma conta com esse e-mail. Tente entrar.');
+        window.location.href = 'login.html?ok=1';
+    });
+</script>
+
+</body>
+</html>

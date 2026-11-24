@@ -1,0 +1,143 @@
+/* Página de Termos de Uso */
+.termos-hero {
+    background-color: #0b1220;
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 56px 0 44px;
+}
+
+.termos-eyebrow {
+    color: var(--cor-azul);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+.termos-data {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--cor-texto-secundario);
+    border: 1px solid var(--cor-borda);
+    border-radius: 999px;
+    padding: 5px 14px;
+}
+
+.termos-ico {
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background-color: rgba(56, 189, 248, 0.12);
+    color: var(--cor-azul);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Índice lateral */
+.termos-indice {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.termos-indice-titulo {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--cor-texto-secundario);
+    padding: 0 12px 8px;
+}
+
+.termos-indice a {
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-left: 2px solid var(--cor-borda);
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.termos-indice a:hover {
+    color: var(--cor-texto);
+}
+
+.termos-indice a.ativo {
+    color: var(--cor-azul);
+    border-left-color: var(--cor-azul);
+    background-color: rgba(56, 189, 248, 0.06);
+}
+
+/* Seções */
+.termos-secao {
+    scroll-margin-top: 100px;
+}
+
+.termos-h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+}
+
+.termos-num {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(56, 189, 248, 0.12);
+    color: var(--cor-azul);
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.termos-texto {
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.termos-texto p:last-child,
+.termos-texto ul:last-child {
+    margin-bottom: 0;
+}
+
+.termos-texto li {
+    margin-bottom: 0.35rem;
+}
+
+.termos-texto a {
+    color: var(--cor-azul);
+}
+
+/* Botão voltar ao topo */
+.termos-topo {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-azul);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.termos-topo.visivel {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.termos-topo:hover {
+    border-color: var(--cor-azul);
+}
